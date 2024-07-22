@@ -6,6 +6,12 @@ export default {
       colors: {
         customBlue: "#3F72AF",
         customDarkBlue: "#112D4E",
+        customGray: "#BFBFBF",
+        customSky: "#DBE2EF",
+      },
+      fontFamily: {
+        inter: ["Inter"],
+        dmsans: ["DM+Sans"],
       },
     },
   },
