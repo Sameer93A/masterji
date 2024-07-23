@@ -26,7 +26,7 @@ function App() {
               <OtpInputField length={4} onOtpSubmit={onOtpSubmit} />
             </div>
             <div className="flex justify-center">
-              <button className="w-[417px] h-[64px] top-[540px] left-[548px] rounded-[8px] bg-customDarkBlue mt-[24px]">
+              <button className="w-[417px] h-[64px] top-[540px] left-[548px] rounded-[8px] bg-customDarkBlue mt-[24px] ml-[19px]">
                 <div className="font-dmsans font-[400] text-[25px] leading-8 tracking-customTighter text-center text-white">
                   Verify Account
                 </div>

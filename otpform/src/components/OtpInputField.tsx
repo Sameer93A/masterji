@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-export const OtpInputField = ({ length, onOtpSubmit }: any) => {
+export const OtpInputField = ({ length, onOtpSubmit = () => {} }: any) => {
   const [otp, setOtp] = useState(new Array(length).fill(""));
   const inputRef = useRef<any>([]);
   useEffect(() => {
@@ -9,19 +9,19 @@ export const OtpInputField = ({ length, onOtpSubmit }: any) => {
     }
   });
   const handleChange = (index: any, e: any) => {
-    const value = e.targetl.value;
-
-    if (isNaN(value)) return;
-
+    const value = e.target.value;
     const newOtp = [...otp];
     newOtp[index] = value.substring(value.length - 1);
     setOtp(newOtp);
-
     const combinedOtp = newOtp.join("");
     if (combinedOtp.length === length) {
       onOtpSubmit(combinedOtp);
     }
   };
+
+  const handleClick = (index: any) => {};
+  const handleKeyDown = (index: any) => {};
+
   return (
     <div>
       {otp.map((value, index) => {
@@ -36,7 +36,13 @@ export const OtpInputField = ({ length, onOtpSubmit }: any) => {
             onChange={(e) => {
               handleChange(index, e);
             }}
-            className="w-[90px] h-[100px] top-[416px] left-[875px] rounded-[12px] bg-customSky m-4 text-sm mt-[36px]"
+            onClick={() => {
+              handleClick(index);
+            }}
+            onKeyDown={() => {
+              handleKeyDown(index, e);
+            }}
+            className="w-[90px] h-[100px] top-[416px] left-[875px] rounded-[12px] bg-customSky ml-[19px] mt-[36px]"
           />
         );
       })}
