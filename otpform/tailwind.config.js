@@ -14,6 +14,9 @@ export default {
         dmsans: ["DM+Sans"],
       },
     },
+    letterSpacing: {
+      customTighter: "-0.05em",
+    },
   },
   plugins: [],
 };
