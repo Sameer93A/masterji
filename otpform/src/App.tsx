@@ -1,7 +1,7 @@
 import { OtpInputField } from "./components/OtpInputField";
 
 function App() {
-  const onOtpSubmit = (otp) => {
+  const onOtpSubmit = (otp: number) => {
     console.log("Login Successfull", otp);
   };
   return (
@@ -14,13 +14,14 @@ function App() {
       <div className="flex justify-center flex-col h-screen">
         <div className="flex justify-center">
           <div className="bg-white w-[756px] h-[514px] top-[218px] left-[378px] rounded-[18px] drop-shadow">
-            <div className="font-dmsans font-[700] text-[40px] leading-[52.08px] tracking-customTighter text-center text-black pt-[30px]">
+            <div className=" h-[52px] top-[248px] left-[532px] font-dmsans font-[700] text-[40px] leading-[52.08px] text-center  text-black pt-[30px]">
               Mobile Phone Verification
             </div>
-
-            <div className="font-dmsans font-[400px] text-[25px]  text-center leading-8 text-customGray pt-[14px]">
-              Enter the 4-digit verification code that was sent to <br />
-              your phone number.
+            <div className="flex justify-center">
+              <div className="w-[585px] h-[66px] top-[314px] left-[464px] font-dmsans font-[400] text-[25px] leading-[32.55px] text-center  text-customGray mt-14">
+                Enter the 4-digit verification code that was sent to <br />
+                your phone number.
+              </div>
             </div>
             <div className="flex justify-center">
               <OtpInputField length={4} onOtpSubmit={onOtpSubmit} />

@@ -11,7 +11,7 @@ export default {
       },
       fontFamily: {
         inter: ["Inter"],
-        dmsans: ["DM+Sans"],
+        dmsans: ["DM Sans"],
       },
     },
     letterSpacing: {
