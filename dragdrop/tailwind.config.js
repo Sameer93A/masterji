@@ -7,6 +7,7 @@ export default {
         customGreen: "#D2E3C8",
         customDarkGreen: "#4F6F52",
         customBlack: "#313131",
+        customLigtGreen: "#DBFFCE",
       },
       fontFamily: {
         inter: ["Inter"],

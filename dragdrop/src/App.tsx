@@ -1,15 +1,12 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import { Header } from "./components/Header";
 import { Banner } from "./components/Banner";
+import { Menu } from "./components/Menu";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="bg-customGreen h-screen">
+    <div className="bg-customGreen min-h-screen">
       <Header />
       <div className="flex justify-center">
         <div className="w-[1223px] h-[785px] top-[145px] left-[71px] rounded-[18px] drop-shadow bg-white mt-[31px]">
@@ -21,10 +18,10 @@ function App() {
           </div>
           <div className="flex justify-center">
             <Banner
-              image="hello"
-              title="dafhsdkjhfkjdshfh"
-              price={121212}
-              label="dkfjjdaskl;jfkl"
+              image="https://s3-alpha-sig.figma.com/img/c7bd/c76b/a7aa105651adf84679c3df26d603e3f7?Expires=1722816000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=m9VUtydTVO2Rx5j43goTevZkB7JZSsTy1-gykdiOfK0eKtkXKMwTN52ZEHVVdxxtML3gwgsEUheUyB3oagUXD-pAWY-szKOSZYgSiy1J9k5kAqBlNRSy0~S3OJHbyhg4m4b2WSf4R-SaejrwfZvMaixQ7-n3KHWSaihtRbq1IbeP4L0oNvRTdNHGvKGbVkqDGuh0dZac1M9Ry21iOJ~DUJFgSInFDUTkkZ2Xe8jZ52xbT4ahquzssckB5hUNR2snHPAbOCjwunLzQq1uhCXXhmKiIkszOezDNVNFIbatuvYMzMW005vcT7rORXvoetUN7jqpjY0qJUan0w6NQyN2Pw__"
+              title="Interview preparation with JavaScript 2.0"
+              price="Rs. 9000/-"
+              label="course"
             />
           </div>
         </div>
