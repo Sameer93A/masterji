@@ -8,7 +8,7 @@ import React, {
 
 interface OtpTypes {
   length: number;
-  onOtpSubmit: (otp: string) => void;
+  onOtpSubmit: (otp: number | string) => void;
   status: string;
 }
 
@@ -18,7 +18,7 @@ export const OtpInputField: React.FC<OtpTypes> = ({
   status,
 }) => {
   const [otp, setOtp] = useState<string[]>(new Array(length).fill(""));
-  const inputRef = useRef<HTMLInputElement[]>([]);
+  const inputRef = useRef<(HTMLInputElement | null)[]>([]);
 
   useEffect(() => {
     if (inputRef.current[0]) {
@@ -36,13 +36,13 @@ export const OtpInputField: React.FC<OtpTypes> = ({
       onOtpSubmit(combinedOtp);
     }
     if (value && index < length - 1 && inputRef.current[index + 1]) {
-      inputRef.current[index + 1].focus();
+      inputRef.current[index + 1]?.focus();
     }
   };
 
   const handleClick = (index: number) => {
     // You can implement click handling logic here if needed
-    inputRef.current[index].setSelectionRange(1, 1);
+    inputRef.current[index]?.setSelectionRange(1, 1);
   };
 
   const handleKeyDown = (index: number, e: KeyboardEvent<HTMLInputElement>) => {
@@ -53,7 +53,7 @@ export const OtpInputField: React.FC<OtpTypes> = ({
       index > 0 &&
       inputRef.current[index - 1]
     ) {
-      inputRef.current[index - 1].focus();
+      inputRef.current[index - 1]?.focus();
     }
   };
 

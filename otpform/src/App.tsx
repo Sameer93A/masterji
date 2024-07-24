@@ -3,23 +3,20 @@ import { OtpInputField } from "./components/OtpInputField";
 
 function App() {
   const correctOtp = 1234;
-  const [userOtp, setUserOtp] = useState<any>(0);
-  const [status, setStatus] = useState("");
+  const [userOtp, setUserOtp] = useState<number>(0);
+  const [status, setStatus] = useState<"verified" | "failed" | "">("");
 
-  const onOtpSubmit = (otp: any) => {
+  const onOtpSubmit = (otp: number) => {
     setUserOtp(Number(otp));
   };
 
-  function handleClick() {
+  const handleClick: MouseEventHandler<HTMLButtonElement> = () => {
     if (userOtp === correctOtp) {
       setStatus("verified");
     } else {
       setStatus("failed");
     }
-  }
-
-  console.log(status);
-
+  };
   return (
     <div className="bg-customBlue ">
       <div className="flex justify-center">
@@ -53,7 +50,7 @@ function App() {
                   status === "verified"
                     ? "bg-customGreen"
                     : status === "failed"
-                    ? "bg-customRed"
+                    ? "bg-customRed "
                     : "bg-customDarkBlue"
                 } mt-[24px] ml-[19px]`}
               >
