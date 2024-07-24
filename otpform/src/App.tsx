@@ -7,7 +7,7 @@ function App() {
   const [status, setStatus] = useState<"verified" | "failed" | "">("");
 
   const onOtpSubmit = (otp: number) => {
-    setUserOtp(Number(otp));
+    setUserOtp(otp);
   };
 
   const handleClick: MouseEventHandler<HTMLButtonElement> = () => {

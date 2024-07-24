@@ -8,7 +8,7 @@ import React, {
 
 interface OtpTypes {
   length: number;
-  onOtpSubmit: (otp: number | string) => void;
+  onOtpSubmit: (otp: number) => void;
   status: string;
 }
 
@@ -33,7 +33,7 @@ export const OtpInputField: React.FC<OtpTypes> = ({
     setOtp(newOtp);
     const combinedOtp = newOtp.join("");
     if (combinedOtp.length === length) {
-      onOtpSubmit(combinedOtp);
+      onOtpSubmit(Number(combinedOtp));
     }
     if (value && index < length - 1 && inputRef.current[index + 1]) {
       inputRef.current[index + 1]?.focus();
