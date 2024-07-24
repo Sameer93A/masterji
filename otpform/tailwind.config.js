@@ -8,6 +8,8 @@ export default {
         customDarkBlue: "#112D4E",
         customGray: "#BFBFBF",
         customSky: "#DBE2EF",
+        customGreen: "#23CF9B",
+        customRed: "#EB2D5B",
       },
       fontFamily: {
         inter: ["Inter"],

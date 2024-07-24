@@ -9,9 +9,14 @@ import React, {
 interface OtpTypes {
   length: number;
   onOtpSubmit: (otp: string) => void;
+  status: string;
 }
 
-export const OtpInputField: React.FC<OtpTypes> = ({ length, onOtpSubmit }) => {
+export const OtpInputField: React.FC<OtpTypes> = ({
+  length,
+  onOtpSubmit,
+  status,
+}) => {
   const [otp, setOtp] = useState<string[]>(new Array(length).fill(""));
   const inputRef = useRef<HTMLInputElement[]>([]);
 
@@ -67,7 +72,15 @@ export const OtpInputField: React.FC<OtpTypes> = ({ length, onOtpSubmit }) => {
           onChange={(e) => handleChange(index, e)}
           onClick={() => handleClick(index)}
           onKeyDown={(e) => handleKeyDown(index, e)}
-          className="font-dmsans w-[90px] h-[100px] top-[416px] left-[875px] rounded-[12px] bg-customSky ml-[19px] mt-[36px] text-[48px] text-center text-black font-[400]  leading-1 tracking-customTighter"
+          className={`font-dmsans w-[90px] h-[100px] top-[416px] left-[875px] rounded-[12px] bg-customSky ml-[19px] mt-[36px] text-[48px] text-center text-black font-[400]  leading-1 tracking-customTighter
+            ${
+              status === "verified"
+                ? "border border-customGreen"
+                : status === "failed"
+                ? "border border-customRed"
+                : "border-none"
+            }
+            `}
         />
       ))}
     </div>

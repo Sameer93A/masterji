@@ -1,9 +1,25 @@
+import { MouseEventHandler, useState } from "react";
 import { OtpInputField } from "./components/OtpInputField";
 
 function App() {
-  const onOtpSubmit = (otp: number) => {
-    console.log("Login Successfull", otp);
+  const correctOtp = 1234;
+  const [userOtp, setUserOtp] = useState<any>(0);
+  const [status, setStatus] = useState("");
+
+  const onOtpSubmit = (otp: any) => {
+    setUserOtp(Number(otp));
   };
+
+  function handleClick() {
+    if (userOtp === correctOtp) {
+      setStatus("verified");
+    } else {
+      setStatus("failed");
+    }
+  }
+
+  console.log(status);
+
   return (
     <div className="bg-customBlue ">
       <div className="flex justify-center">
@@ -24,12 +40,29 @@ function App() {
               </div>
             </div>
             <div className="flex justify-center">
-              <OtpInputField length={4} onOtpSubmit={onOtpSubmit} />
+              <OtpInputField
+                length={4}
+                onOtpSubmit={onOtpSubmit}
+                status={status}
+              />
             </div>
             <div className="flex justify-center">
-              <button className="w-[417px] h-[64px] top-[540px] left-[548px] rounded-[8px] bg-customDarkBlue mt-[24px] ml-[19px]">
+              <button
+                onClick={handleClick}
+                className={`w-[417px] h-[64px] top-[540px] left-[548px] rounded-[8px] ${
+                  status === "verified"
+                    ? "bg-customGreen"
+                    : status === "failed"
+                    ? "bg-customRed"
+                    : "bg-customDarkBlue"
+                } mt-[24px] ml-[19px]`}
+              >
                 <div className="font-dmsans font-[400] text-[25px] leading-8 tracking-customTighter text-center text-white">
-                  Verify Account
+                  {status === "verified"
+                    ? "Verified"
+                    : status === "failed"
+                    ? "Verification Failed"
+                    : "Verify Account"}
                 </div>
               </button>
             </div>
