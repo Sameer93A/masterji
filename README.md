@@ -22,7 +22,8 @@ Features
 Technologies Used
 
     React
-    CSS
+    TypeScript
+    Tailwind
 
 2. Drag and Drop
 
@@ -36,5 +37,6 @@ Features
 Technologies Used
 
     React
+    TypeScript
+    Tailwind
     react-draggable
-    CSS
