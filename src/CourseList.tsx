@@ -4,6 +4,7 @@ import { Header } from "./components/Header";
 import { Banner } from "./components/Banner";
 import { Menu } from "./components/Menu";
 import { ChaiLogo } from "./components/ChaiLogo";
+import React from "react";
 
 const CourseList: React.FC = () => {
   return (

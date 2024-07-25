@@ -1,3 +1,5 @@
+import React from "react";
+
 interface Header {
   textcolor: string;
   paddingtop: string;

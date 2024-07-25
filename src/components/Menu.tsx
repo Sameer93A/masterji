@@ -1,3 +1,4 @@
+import React from "react";
 import menu from "../assets/meny.svg";
 
 export const Menu = () => {

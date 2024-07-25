@@ -4,6 +4,7 @@ import { ChaiLogo } from "./components/ChaiLogo";
 import { Header } from "./components/Header";
 import { Button } from "./components/Button";
 import { Footer } from "./components/Footer";
+import React from "react";
 
 const OtpForm: React.FC = () => {
   const correctOtp = 1234;

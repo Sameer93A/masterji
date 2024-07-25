@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CourseList from "./CourseList";
 import OtpForm from "./OtpForm";
+import React from "react";
 
 const App: React.FC = () => {
   return (
