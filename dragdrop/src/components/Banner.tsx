@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import vectorpng from "../assets/Vector.png";
 import { Menu } from "./Menu";
 import Draggable from "react-draggable";
@@ -12,19 +12,26 @@ interface Banner {
 
 export const Banner: React.FC<Banner> = ({ image, title, price, label }) => {
   const [isGrabbing, setIsGrabbing] = useState(false);
+
   const handleMouseDown = () => {
     setIsGrabbing(true);
   };
   const handleMouseUp = () => {
     setIsGrabbing(false);
   };
+
   return (
-    <Draggable axis="y" handle=".handle">
+    <Draggable
+      handle=".handle"
+      bounds={{ top: 0, left: 0, right: 0, bottom: 500 }}
+      grid={[120, 120]}
+    >
       <div>
         <div className="w-[1025px] h-[93px] top-[293px] left-[110px] bg-white shadow-customShadow mt-[31px]">
           <div className="flex">
             <div className="w-[40px] h-[40px] top-[320px] left-[130px]  mt-[27px] ml-[20px]">
               <img
+                draggable="false"
                 className={`handle ${
                   isGrabbing ? "cursor-grabbing" : "cursor-grab"
                 } my-[6.67px] mx-[11.67px]`}
