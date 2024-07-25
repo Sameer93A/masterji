@@ -1,30 +1,40 @@
-# React + TypeScript + Vite
+Project Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project was developed as part of a competition organized by Hitesh Sir. It includes two primary components:
 
-Currently, two official plugins are available:
+    OTP Form - A fully functional form for OTP (One Time Password) verification.
+    Drag and Drop - A work-in-progress drag-and-drop interface using react-draggable.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Live Project
 
-## Expanding the ESLint configuration
+You can view the live project here.
+Projects [Project Link](https://masterji-sameer-ahmeds-projects-f03a5ebb.vercel.app/)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. OTP Form
 
-- Configure the top-level `parserOptions` property like this:
+The OTP Form component is complete and provides a seamless user experience for OTP verification. It includes input validation and user feedback mechanisms to ensure accuracy and usability.
+Features
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+    Input validation
+    User feedback on submission
+    Responsive design
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Technologies Used
+
+    React
+    CSS
+
+2. Drag and Drop
+
+The Drag and Drop component is currently half complete. It utilizes the react-draggable library to enable draggable elements within the interface.
+Features
+
+    Drag-and-drop functionality
+    Multiple draggable items
+    Customizable grid and bounds (planned)
+
+Technologies Used
+
+    React
+    react-draggable
+    CSS
